@@ -730,6 +730,11 @@ $sql .= ' AND f.entity IN ('.getEntity('invoice').')';
 if ($socid > 0) {
 	$sql .= ' AND s.rowid = '.((int) $socid);
 }
+
+if(!$user->hasRight('facture','view_all_invoices')){
+	$sql .= ' AND f.fk_user_author = '.((int) $user->id);
+}
+
 if ($userid) {
 	if ($userid == -1) {
 		$sql .= ' AND f.fk_user_author IS NULL';
