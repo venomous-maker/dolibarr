@@ -243,6 +243,16 @@ if (GETPOST("orphelins", "alpha")) {
 		$sql .= " AND EXISTS (SELECT f.fk_soc FROM ".MAIN_DB_PREFIX."facture as f, ".MAIN_DB_PREFIX."paiement_facture as pf";
 		$sql .= " WHERE p.rowid = pf.fk_paiement AND pf.fk_facture = f.rowid AND f.fk_soc = ".((int) $socid).")";
 	}
+
+	if(!$user->hasRight('facture','view_all_payments')){
+		$sql .= ' AND p.fk_user_creat = '.((int) $user->id);
+
+		if($userid && $userid != -1)
+		{
+			// Bind $userid to this userid to block user from searching other user's payments
+			$userid = ((int) $user->id);
+		}
+	}
 	if ($userid) {
 		if ($userid == -1) {
 			$sql .= " AND p.fk_user_creat IS NULL";
