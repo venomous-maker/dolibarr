@@ -220,6 +220,14 @@ class modFacture extends DolibarrModules
 		$this->rights[$r][5] = 'reopen';
 
 
+		$r++;
+		$this->rights[$r][0] = 20;
+		$this->rights[$r][1] = 'View All Invoices. If Disabled Users Can Only View Invoices They Generated Else Theirs And For Others';
+		$this->rights[$r][2] = 'a';
+		$this->rights[$r][3] = 0;
+		$this->rights[$r][4] = 'view_all_invoices';
+
+
 		// Menus
 		//-------
 		$this->menu = 1; // This module add menu entries. They are coded into menu manager.
