@@ -733,6 +733,12 @@ if ($socid > 0) {
 
 if(!$user->hasRight('facture','view_all_invoices')){
 	$sql .= ' AND f.fk_user_author = '.((int) $user->id);
+
+	if($userid && $userid != -1)
+	{
+		// Bind $userid to this userid to block user from searching other user's invoices
+		$userid = ((int) $user->id);
+	}
 }
 
 if ($userid) {
