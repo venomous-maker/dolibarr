@@ -164,6 +164,9 @@ class modFacture extends DolibarrModules
 		$this->rights[$r][3] = 0;
 		$this->rights[$r][4] = 'creer';
 
+
+
+
 		// There is a particular permission for unvalidate because this may be not forbidden by some laws
 		$r++;
 		$this->rights[$r][0] = 13;
