@@ -1368,6 +1368,7 @@ if (!defined('NOLOGIN')) {
 	if ($user->admin) {
 		$user->rights->user->user->lire = 1;
 		$user->rights->user->user->creer = 1;
+		$user->rights->user->user->view_all_invoices = 1;
 		$user->rights->user->user->password = 1;
 		$user->rights->user->user->supprimer = 1;
 		$user->rights->user->self->creer = 1;
