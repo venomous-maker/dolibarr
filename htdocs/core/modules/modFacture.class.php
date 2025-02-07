@@ -233,7 +233,7 @@ class modFacture extends DolibarrModules
 
 		$r++;
 		$this->rights[$r][0] = 1324;
-		$this->rights[$r][1] = 'View All Payments. If Disabled Users Can Only View Payments Associated Else Theirs And For Others';
+		$this->rights[$r][1] = 'View All Payments. If Disabled Users Can Only View Payments Associated To Them Else Theirs And For Others';
 		$this->rights[$r][2] = 'a';
 		$this->rights[$r][3] = 0;
 		$this->rights[$r][4] = 'view_all_payments';
